@@ -67,17 +67,22 @@ public class CentralTest {
         Corrida f = new Corrida(p);
         Corrida t = new Corrida(p);
 
-        o.avalia(a,2);
-        o.avalia(s,3);
-        b.avalia(f,1);
-        g.avalia(t,1);
+        a.setMotorista(o);
+        s.setMotorista(o);
+        d.setMotorista(o);
+        f.setMotorista(b);
+        t.setMotorista(g);
 
+
+        a.avaliaMotorista(2);
+        s.avaliaMotorista(3);
+        f.avaliaMotorista(1);
+        t.avaliaMotorista(1);
 
         ce.adiciona(a);
         ce.adiciona(s);
         ce.adiciona(d);
         ce.adiciona(f);
-        ce.adiciona(t);
 
 
         assertEquals(2.5, ce.mediaMotorista("021.446.127-08"));
